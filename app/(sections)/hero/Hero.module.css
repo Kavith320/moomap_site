@@ -1,60 +1,121 @@
-/* app/(sections)/hero/Hero.module.css */
-
 .hero {
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 1.5rem;
-    background-image: url("/herobg.jpg"); /* 🔹 replace with your image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    color: white;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1.5rem;
+  background-image: url("/herobg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+/* subtle dark overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* ⬆ more opacity (0.45 → 0.55) */
+  z-index: 0;
+}
+
+/* === SIGNAL ANIMATION LAYER === */
+.signals {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.signal {
+  position: absolute;
+  width: 220px; /* slightly larger */
+  height: 220px;
+  border: 2px solid rgba(61, 139, 255, 0.605); /* brighter blue + more visible */
+  border-radius: 50%;
+  opacity: 0;
+  animation: pulse 3.5s ease-out infinite; /* ⬆ faster pulses */
+}
+
+.signal1 {
+  top: 40%;
+  left: 25%;
+  animation-delay: 0s;
+}
+
+.signal2 {
+  top: 60%;
+  left: 70%;
+  animation-delay: 1s;
+}
+
+.signal3 {
+  top: 30%;
+  left: 55%;
+  animation-delay: 2s;
+}
+
+.signal4 {
+  top: 50%;
+  left: 45%;
+  animation-delay: 2.5s;
+}
+
+/* ⬆ added an extra signal for denser iteration */
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8; /* ⬆ more visible start */
   }
-  
-  /* optional dark overlay for better text visibility */
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    z-index: 0;
+  40% {
+    opacity: 0.9;
   }
-  
-  .content {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
+  70% {
+    transform: scale(2.8); /* ⬆ bigger ripple */
+    opacity: 0.1;
   }
-  
-  .title {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
+  100% {
+    transform: scale(3);
+    opacity: 0;
   }
-  
-  .subtitle {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    color: #f3f4f6;
-  }
-  
-  .button {
-    background-color: #dca60f;
-    color: rgb(9, 9, 9);
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-  }
-  
-  .button:hover {
-    background-color: #88761f;
-  }
-  
+}
+
+/* === CONTENT === */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #f3f4f6;
+}
+
+.button {
+  background-color: #dca60f;
+  color: rgb(9, 9, 9);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #88761f;
+}
