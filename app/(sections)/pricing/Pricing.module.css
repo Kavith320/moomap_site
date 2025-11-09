@@ -1,0 +1,59 @@
+/* app/(sections)/pricing/Pricing.module.css */
+
+.pricingSection {
+  scroll-margin-top: 6rem;
+  padding: 6rem 1.5rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  /* blue-700 */
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  /* gray-500 */
+  max-width: 36rem;
+  margin: 0 auto 3rem auto;
+  line-height: 1.6;
+}
+
+.soonBox {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
+  display: inline-block;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+.soonText {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.subText {
+  font-size: 1.1rem;
+  color: #e0e7ff;
+  /* light indigo */
+}
+
+@media (max-width: 640px) {
+  .soonText {
+    font-size: 1.5rem;
+  }
+
+  .subText {
+    font-size: 1rem;
+  }
+}

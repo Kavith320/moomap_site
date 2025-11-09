@@ -1,0 +1,300 @@
+/* === About Page Layout === */
+
+.page {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding: 5rem 1.5rem;
+}
+
+.container {
+  max-width: 72rem;
+  /* ~1152px */
+  margin: 0 auto;
+  text-align: center;
+  /* center headings & base text */
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1d4ed8;
+  margin-bottom: 3rem;
+}
+
+/* === Each main section === */
+.section {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.section h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+
+.text {
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  max-width: 48rem;
+  margin: 0 auto 1rem auto;
+}
+
+/* === Subsections for Master / Slave Collars === */
+
+.subSectionGroup {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .subSectionGroup {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.subSection {
+  background-color: #f3f4f6;
+  border-radius: 0.75rem;
+  padding: 1.75rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.subSection:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.subSection h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 0.75rem;
+}
+
+.subText {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subTechList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.subTechItem {
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+  color: #1e40af;
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* === Resources List === */
+.resourceList {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.resourceItem {
+  margin-bottom: 0.75rem;
+}
+
+.resourceItem a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.resourceItem a:hover {
+  text-decoration: underline;
+}
+
+.subMedia {
+  margin: 0 auto 1rem auto;
+  width: 100%;
+  max-width: 520px;     /* keeps images from getting too wide */
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Wide banner-style image that keeps aspect ratio */
+.subImage {
+  display: block;
+  width: 100%;
+  height: auto;         /* keep natural aspect ratio */
+  object-fit: cover;    /* crop gently if needed */
+}
+/* ===== How it works (creative) ===== */
+
+.howSection {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: #f8fafc;              /* slate-50 */
+  border: 1px solid #e5e7eb;        /* gray-200 */
+  border-radius: 1rem;
+}
+
+.howTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1d4ed8;                    /* blue-700 */
+  margin-bottom: 1.25rem;
+}
+
+.flowWrap {
+  --gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: var(--gap);
+  margin-bottom: 1.25rem;
+}
+
+/* Stack nicely on small screens */
+@media (max-width: 820px) {
+  .flowWrap {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+.node {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;        /* gray-200 */
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(2, 6, 23, 0.04);  /* slate-950 */
+}
+
+.nodePrimary {
+  background: linear-gradient(180deg, #eef2ff 0%, #ffffff 60%);
+  border-color: #c7d2fe;            /* indigo-200 */
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.15); /* indigo */
+}
+
+.nodeIcon {
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.nodeTitle {
+  font-weight: 700;
+  color: #111827;                    /* gray-900 */
+}
+
+.nodeText {
+  color: #4b5563;                    /* gray-600 */
+  font-size: 0.95rem;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.arrowSvg {
+  width: 120px;
+  height: 24px;
+  stroke: #94a3b8;                  /* slate-400 */
+  fill: #94a3b8;
+}
+
+.arrowLabel {
+  font-size: 0.8rem;
+  color: #64748b;                    /* slate-500 */
+  margin-top: 0.25rem;
+}
+
+/* Steps list */
+.steps {
+  counter-reset: step;
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0 0.75rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.steps li {
+  position: relative;
+  padding-left: 2.25rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem 0.85rem 2.75rem;
+}
+
+.steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  top: 50%;
+  left: 0.85rem;
+  transform: translateY(-50%);
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 9999px;
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: #2563eb;              /* blue-600 */
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.4);
+}
+
+.rules {
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.35rem;
+  color: #334155;                    /* slate-700 */
+}
+
+.rules li {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.75rem;
+}
+
+/* Gentle motion, respects reduced-motion */
+@media (prefers-reduced-motion: no-preference) {
+  .node,
+  .steps li,
+  .rules li {
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+  .node:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(2, 6, 23, 0.08);
+  }
+}
