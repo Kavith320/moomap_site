@@ -20,7 +20,8 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55); /* ⬆ more opacity (0.45 → 0.55) */
+  background: rgba(0, 0, 0, 0.55);
+  /* ⬆ more opacity (0.45 → 0.55) */
   z-index: 0;
 }
 
@@ -34,12 +35,15 @@
 
 .signal {
   position: absolute;
-  width: 220px; /* slightly larger */
+  width: 220px;
+  /* slightly larger */
   height: 220px;
-  border: 2px solid rgba(61, 139, 255, 0.605); /* brighter blue + more visible */
+  border: 2px solid rgba(61, 139, 255, 0.605);
+  /* brighter blue + more visible */
   border-radius: 50%;
   opacity: 0;
-  animation: pulse 3.5s ease-out infinite; /* ⬆ faster pulses */
+  animation: pulse 3.5s ease-out infinite;
+  /* ⬆ faster pulses */
 }
 
 .signal1 {
@@ -71,15 +75,20 @@
 @keyframes pulse {
   0% {
     transform: scale(0.5);
-    opacity: 0.8; /* ⬆ more visible start */
+    opacity: 0.8;
+    /* ⬆ more visible start */
   }
+
   40% {
     opacity: 0.9;
   }
+
   70% {
-    transform: scale(2.8); /* ⬆ bigger ripple */
+    transform: scale(2.8);
+    /* ⬆ bigger ripple */
     opacity: 0.1;
   }
+
   100% {
     transform: scale(3);
     opacity: 0;
