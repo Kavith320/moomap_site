@@ -1,17 +1,19 @@
-
-// app/(sections)/hero/Hero.jsx
+// app/(sections)/hero/Hero.tsx
 import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      {/* animated overlay */}
-      <div className={styles.signals}>
-        <div className={`${styles.signal} ${styles.signal1}`} />
-        <div className={`${styles.signal} ${styles.signal2}`} />
-        <div className={`${styles.signal} ${styles.signal3}`} />
+      {/* RIPPLE SIGNALS */}
+      <div className={styles.signals} aria-hidden="true">
+        <span className={`${styles.signal} ${styles.signal1}`} />
+        <span className={`${styles.signal} ${styles.signal2}`} />
+        <span className={`${styles.signal} ${styles.signal3}`} />
+        {/* Optional 4th ripple */}
+        <span className={`${styles.signal} ${styles.signal4}`} />
       </div>
 
+      {/* CONTENT */}
       <div className={styles.content}>
         <h1 className={styles.title}>Smarter Cattle Tracking with MooMap</h1>
         <p className={styles.subtitle}>
