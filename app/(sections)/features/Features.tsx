@@ -3,19 +3,20 @@ import styles from "./Features.module.css";
 export default function Features() {
   const features = [
     {
-      image: "/Features/location.webp",
+      image: "/Features/route.gif",
       title: "Real-time Tracking",
       description:
         "Track every animal’s live GPS position with high accuracy, even in remote areas.",
     },
     {
-      image: "/Features/helth.gif",
-      title: "Health Monitoring",
+      image: "/Features/notification.gif",
+      title: "Anti-Theft Alert",
       description:
-        "Detect unusual movement patterns early to identify potential health issues.",
+         "Instantly detects suspicious activity or forced movement and sends immediate alerts to protect your cattle from theft.",
+
     },
     {
-      image: "/Features/fens.gif",
+      image: "/Features/roadmap.gif",
       title: "Geofencing Alerts",
       description:
         "Get instant alerts when cattle move outside defined zones or safe areas.",
