@@ -17,6 +17,7 @@ export default function Navbar() {
                     <li><a href="#pricing" className={styles.link}>Pricing</a></li>
                     <li><a href="#about" className={styles.link}>About</a></li>
                     <li><a href="#download" className={styles.link}>Download</a></li>
+                    <li><a href="#events" className={styles.link}>Events</a></li>
                     <li><a href="#gallery" className={styles.link}>Gallery</a></li>
                     <li><a href="#team" className={styles.link}>Team</a></li>
                     <li><a href="#contact" className={styles.link}>Contact</a></li>

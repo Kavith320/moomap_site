@@ -6,6 +6,7 @@ import Download from "./(sections)/download/Download";
 import Gallery from "./(sections)/gallery/Gallery";
 import Contact from "./(sections)/contact/Contact";
 import Team from "./(sections)/team/Team";
+import Events from "./(sections)/events/Events";
 export default function HomePage() {
   return (
     <>
@@ -14,6 +15,7 @@ export default function HomePage() {
       <About />
       <Pricing />
       <Download />
+      <Events />
       <Gallery />
       <Team />
       <Contact />
