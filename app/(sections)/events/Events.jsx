@@ -1,15 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Events.module.css";
-
-function formatDate(iso) {
-  return new Date(iso).toLocaleDateString(undefined, {
-    weekday: "long",
-    month: "short",
-    day: "numeric",
-  });
-}
 
 function EventCard({ event }) {
   const [imgIndex, setImgIndex] = useState(0);
@@ -22,22 +14,20 @@ function EventCard({ event }) {
     return () => clearInterval(t);
   }, [event]);
 
-  const isUpcoming = new Date(event.startAt) > new Date();
-
   return (
     <div className={styles.card}>
-      {event.images.map((img, i) => (
+      {event.images?.map((img, i) => (
         <div
-          key={img}
+          key={`${event.id}-${img}-${i}`}
           className={`${styles.bg} ${i === imgIndex ? styles.show : ""}`}
           style={{ backgroundImage: `url(${img})` }}
         />
       ))}
 
-      {isUpcoming && <div className={styles.badge}>Upcoming</div>}
+      {event.isUpcoming && <div className={styles.badge}>Upcoming</div>}
 
       <div className={styles.overlay}>
-        <p className={styles.date}>{formatDate(event.startAt)}</p>
+        <p className={styles.date}>{event.dateText}</p>
         <h2>{event.title}</h2>
         <p className={styles.desc}>{event.description}</p>
         <span className={styles.loc}>{event.location}</span>
@@ -51,7 +41,12 @@ export default function Events() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    fetch("/api/events").then((r) => r.json()).then(setEvents);
+    fetch("/api/events")
+      .then((r) => r.json())
+      .then((data) => {
+        setEvents(Array.isArray(data) ? data : []);
+      })
+      .catch(() => setEvents([]));
   }, []);
 
   useEffect(() => {
@@ -60,37 +55,37 @@ export default function Events() {
       setIndex((i) => (i + 1) % events.length);
     }, 5000);
     return () => clearInterval(t);
-  }, [events]);
+  }, [events.length]);
 
   if (events.length === 0) return null;
 
   return (
-  <section className={styles.wrapper}>
-    <div className={styles.viewport}>
-      <div
-        className={styles.track}
-        style={{ transform: `translateX(-${index * 100}%)` }}
-      >
-        {events.map((event) => (
-          <div key={event.id} className={styles.slide}>
-            <EventCard event={event} />
-          </div>
+    <section className={styles.wrapper}>
+      <div className={styles.viewport}>
+        <div
+          className={styles.track}
+          style={{ transform: `translateX(-${index * 100}%)` }}
+        >
+          {events.map((event) => (
+            <div key={event.id} className={styles.slide}>
+              <EventCard event={event} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Navigation dots */}
+      <div className={styles.dots}>
+        {events.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIndex(i)}
+            className={`${styles.dot} ${i === index ? styles.activeDot : ""}`}
+            aria-label={`Go to event ${i + 1}`}
+            type="button"
+          />
         ))}
       </div>
-    </div>
-
-    {/* Navigation dots */}
-    <div className={styles.dots}>
-      {events.map((_, i) => (
-        <button
-          key={i}
-          onClick={() => setIndex(i)}
-          className={`${styles.dot} ${i === index ? styles.activeDot : ""}`}
-          aria-label={`Go to event ${i + 1}`}
-        />
-      ))}
-    </div>
-  </section>
-);
-
+    </section>
+  );
 }
