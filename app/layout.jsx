@@ -5,7 +5,7 @@ export const metadata = {
   title: "MooMap | Smart Cattle Tracking",
   description:
     "Track and manage cattle effortlessly with MooMap — GPS collars, mobile insights, and smart analytics.",
-  icons: { icon: "/favicon.png" },
+  icons: { icon: "/favicon1.ico" },
 };
 
 const YEAR = new Date().getFullYear();
