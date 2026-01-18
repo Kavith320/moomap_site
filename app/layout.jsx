@@ -1,5 +1,6 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "MooMap | Smart Cattle Tracking",
@@ -23,6 +24,8 @@ export default function RootLayout({ children }) {
         <footer className="border-t border-gray-200 text-center py-6 mt-10 text-sm text-gray-500">
           © {YEAR} MooMap. All rights reserved.
         </footer>
+
+        <Analytics />
       </body>
     </html>
   );
