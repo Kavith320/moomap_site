@@ -1,29 +1,80 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 
+const LINKS = [
+  { label: "Features", href: "#features" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Download", href: "#download" },
+  { label: "Events", href: "#events" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Team", href: "#team" },
+  { label: "Contact", href: "#contact" },
+];
+
 export default function Navbar() {
-    return (
-        <nav className={styles.nav}>
-            <div className={styles.container}>
-                {/* Logo + Name (same row) */}
-                <a href="" className={styles.brand}>
-                <img src="/logo.jpg" alt="MooMap Logo" className={styles.logo} />
+  const [open, setOpen] = useState(false);
 
-                    <span className={styles.name}>MooMap</span>
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth > 640) setOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  return (
+    <header className={styles.nav}>
+      <div className={styles.container}>
+        {/* Logo only */}
+        <a className={styles.brand} href="/">
+          <img className={styles.logo} src="/logo.jpg" alt="MooMap" />
+          <span className={styles.name}>MooMap</span>
+        </a>
+
+        {/* Desktop links */}
+        <nav className={styles.desktopOnly}>
+          <ul className={styles.links}>
+            {LINKS.map((l) => (
+              <li key={l.href}>
+                <a className={styles.link} href={l.href}>
+                  {l.label}
                 </a>
-
-                {/* Links */}
-                <ul className={styles.links}>
-                    <li><a href="#features" className={styles.link}>Features</a></li>
-                    <li><a href="#pricing" className={styles.link}>Pricing</a></li>
-                    <li><a href="#about" className={styles.link}>About</a></li>
-                    <li><a href="#download" className={styles.link}>Download</a></li>
-                    <li><a href="#events" className={styles.link}>Events</a></li>
-                    <li><a href="#gallery" className={styles.link}>Gallery</a></li>
-                    <li><a href="#team" className={styles.link}>Team</a></li>
-                    <li><a href="#contact" className={styles.link}>Contact</a></li>
-                </ul>
-            </div>
+              </li>
+            ))}
+          </ul>
         </nav>
-    );
-}
 
+        {/* Mobile menu button */}
+        <button
+          type="button"
+          className={`${styles.mobileOnly} ${styles.menuBtn}`}
+          aria-label="Toggle menu"
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          Menu
+        </button>
+      </div>
+
+      {/* Mobile dropdown */}
+      {open && (
+        <div className={styles.mobileOnly}>
+          <nav className={styles.mobilePanel}>
+            {LINKS.map((l) => (
+              <a
+                key={l.href}
+                className={styles.mobileLink}
+                href={l.href}
+                onClick={() => setOpen(false)}
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      )}
+    </header>
+  );
+}

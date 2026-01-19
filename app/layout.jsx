@@ -7,7 +7,7 @@ export const metadata = {
   description:
     "Track and manage cattle effortlessly with MooMap — GPS collars, mobile insights, and smart analytics.",
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.ico",
   },
 };
 

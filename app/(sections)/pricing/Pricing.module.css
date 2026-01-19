@@ -1,59 +1,55 @@
-/* app/(sections)/pricing/Pricing.module.css */
-
 .pricingSection {
   scroll-margin-top: 6rem;
-  padding: 6rem 1.5rem;
+  padding: clamp(3rem, 6vw, 7rem) 1rem;
   background-color: #ffffff;
   text-align: center;
 }
 
 .title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  font-weight: 800;
   color: #1d4ed8;
-  /* blue-700 */
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .subtitle {
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 3.2vw, 1.15rem);
   color: #6b7280;
-  /* gray-500 */
-  max-width: 36rem;
-  margin: 0 auto 3rem auto;
+  max-width: 38rem;
+  margin: 0 auto clamp(2rem, 5vw, 3.5rem) auto;
   line-height: 1.6;
+  padding: 0 0.25rem;
 }
 
 .soonBox {
   background: linear-gradient(135deg, #2563eb, #3b82f6);
   color: white;
-  padding: 4rem 2rem;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 4vw, 2.5rem);
   border-radius: 1.5rem;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
-  display: inline-block;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 640px;
   width: 100%;
 }
 
 .soonText {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: clamp(1.4rem, 4.8vw, 2.2rem);
+  font-weight: 800;
   margin-bottom: 0.75rem;
 }
 
 .subText {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 3.2vw, 1.1rem);
   color: #e0e7ff;
-  /* light indigo */
+  line-height: 1.5;
 }
 
-@media (max-width: 640px) {
-  .soonText {
-    font-size: 1.5rem;
+@media (min-width: 1024px) {
+  .pricingSection {
+    padding: 8rem 2rem;
   }
 
-  .subText {
-    font-size: 1rem;
+  .soonBox {
+    border-radius: 2rem;
   }
 }

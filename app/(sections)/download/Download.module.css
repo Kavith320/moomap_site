@@ -1,71 +1,84 @@
 .section {
-    background-color: #f9fafb;
-    padding: 5rem 1.5rem;
-    text-align: center;
-  }
-  
-  .container {
-    max-width: 64rem;
-    margin: 0 auto;
-  }
-  
-  .title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #1d4ed8;
-    margin-bottom: 1rem;
-  }
-  
-  .text {
-    color: #4b5563;
-    margin-bottom: 2rem;
-    max-width: 40rem;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-  }
-  .p{
-    
-     color: rgba(0, 0, 0, 0.333)
-   
-  }
-  
-  .buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-  }
-  
-  .button {
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    color: white;
-    text-decoration: none;
-    transition: background 0.5s ease;
-  }
-  
-  .playStore {
-    background-color: #34d35e; /* green-400 */
-  }
-  
-  .playStore:hover {
-    background-color: #131313; /* green-600 */
-  }
-  
-  .appStore {
-    background-color: #101111; /* blue-600 */
-  }
-  
-  .appStore:hover {
-    background-color: #1d4ed8;
-  }
-  
-  .note {
-    color: #1f1f1f;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-  }
-  
+  background-color: #f9fafb;
+  padding: clamp(3rem, 6vw, 6rem) 1rem;
+  text-align: center;
+}
+
+.container {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  font-weight: 800;
+  color: #1d4ed8;
+  margin-bottom: 1rem;
+}
+
+.text {
+  color: #4b5563;
+  margin-bottom: 2rem;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  font-size: clamp(0.95rem, 3.2vw, 1.05rem);
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+/* Web dashboard button */
+.dashboard {
+  background-color: #f38200;
+  color: #000;
+}
+
+.dashboard:hover {
+  background-color: #ffb703;
+}
+
+/* App buttons */
+.playStore {
+  background-color: #34d35e;
+}
+
+.playStore:hover {
+  background-color: #16a34a;
+}
+
+.appStore {
+  background-color: #101111;
+}
+
+.appStore:hover {
+  background-color: #1d4ed8;
+}
+
+.note {
+  color: #6b7280;
+  font-size: 0.9rem;
+}

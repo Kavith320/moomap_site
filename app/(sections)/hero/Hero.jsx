@@ -1,4 +1,3 @@
-// app/(sections)/hero/Hero.tsx
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -9,19 +8,31 @@ export default function Hero() {
         <span className={`${styles.signal} ${styles.signal1}`} />
         <span className={`${styles.signal} ${styles.signal2}`} />
         <span className={`${styles.signal} ${styles.signal3}`} />
-        {/* Optional 4th ripple */}
         <span className={`${styles.signal} ${styles.signal4}`} />
       </div>
 
       {/* CONTENT */}
       <div className={styles.content}>
         <h1 className={styles.title}>Smarter Cattle Tracking with MooMap</h1>
+
         <p className={styles.subtitle}>
-          Monitor your cattle in real-time using GPS-enabled collars and our intelligent mobile dashboard.
-          Reduce theft, prevent accidents, and improve farm efficiency.
+          Monitor your cattle in real-time using GPS-enabled collars and our
+          intelligent mobile dashboard. Reduce theft, prevent accidents, and
+          improve farm efficiency.
         </p>
-        <a href="#features" className={styles.button}>
-          Explore Features
+
+        {/* BUTTON WITH ORBIT PARTICLES */}
+        <a href="#features" className={styles.buttonWrap}>
+          <span className={styles.particles} aria-hidden="true">
+            <span className={`${styles.particle} ${styles.p1}`} />
+            <span className={`${styles.particle} ${styles.p2}`} />
+            <span className={`${styles.particle} ${styles.p3}`} />
+            <span className={`${styles.particle} ${styles.p4}`} />
+            <span className={`${styles.particle} ${styles.p5}`} />
+            <span className={`${styles.particle} ${styles.p6}`} />
+          </span>
+
+          <span className={styles.button}>Explore Features</span>
         </a>
       </div>
     </section>
