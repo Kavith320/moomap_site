@@ -68,7 +68,7 @@ export async function GET() {
   images: ["/events/FirstCustomer/1.jpeg",
            "/events/FirstCustomer/2.jpeg",
            "/events/FirstCustomer/3.PNG",
-           "/events/FirstCustomer/4.jpg"],
+           "/events/FirstCustomer/4.JPG"],
   dateText: "15,01,2026",
   isUpcoming: false
 }
